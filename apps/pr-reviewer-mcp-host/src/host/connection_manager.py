@@ -66,9 +66,7 @@ class ConnectionManager:
         print("🤝 Initializing MCP session...")
         session = await self.exit_stack.enter_async_context(ClientSession(read_stream, write_stream))
         self.session = session
-        print("⚡ Starting session initialization...")
-        await session.initialize()
-        print("✨ Session initialization complete!")
+        print("✨ Session created!")
         print(f"\n✅ Connected to MCP server")
         if get_session_id:
             session_id = get_session_id()
